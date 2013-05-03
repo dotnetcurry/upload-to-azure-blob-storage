@@ -1,0 +1,14 @@
+﻿@model MvcAzureBlogStorage.Models.CloudFilesModel
+@{
+    ViewBag.Title = "File List";
+}
+<h2>File List</h2>
+<ul>
+    @foreach (var item in Model.Files)
+    {
+        <li>
+            <a href="@item.URL">@item.FileName</a> (@item.Size bytes)
+        </li>
+    }
+</ul>
+@Html.ActionLink("Upload Another File", "UploadFile")
